@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px #000;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendation System</h1>
+        <input type="text" id="movieInput" placeholder="Enter a movie you like">
+        <input type="submit" value="Get Recommendations" onclick="getRecommendations()">
+
+        <h2>Recommended Movies:</h2>
+        <ul id="recommendationsList">
+            <!-- Recommendations will be appended here -->
+        </ul>
+    </div>
+
+    <script>
+        function getRecommendations() {
+            const movieInput = document.getElementById('movieInput').value;
+            const recommendationsList = document.getElementById('recommendationsList');
+            recommendationsList.innerHTML = '';
+
+            // Placeholder for your recommendation logic
+            const recommendations = ["Movie 1", "Movie 2", "Movie 3", "Movie 4", "Movie 5"]; // Replace with actual logic
+
+            recommendations.forEach(function(movie) {
+                const li = document.createElement('li');
+                li.textContent = movie;
+                recommendationsList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
